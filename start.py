@@ -42,11 +42,15 @@ def cal_wage(hr_wage,total__hr):
     wage_per_day = total__hr*hr_wage
     return wage_per_day
 
+def parttime_wage(parttime_hr,hr_wage):
+    return parttime_hr*hr_wage
+
 def main():
     display()
     check_attendence()
     day_wage = cal_wage(20,8)
     print(f"The total wage per day is :{day_wage}")
+    print(f"The part time employee wage is :{parttime_wage(8,22)}")
 
 if __name__ == "__main__":
     main()
