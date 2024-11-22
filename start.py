@@ -16,25 +16,37 @@ def display():
     """
     print("Welcome to Employee Wage Computation Program !!!")
 
-def check_attendence(num_emp):
-    """Description: 
+def check_attendence():
+    """
+        Description: 
             Function to print employee is present or not
-        Parameters:
-            num_emp : Number of employees
         Returns:
             Employee is present or not
-        """
-    for emp in range(1,num_emp+1):
-        rand_val = random.randint(0,1)
-        if(rand_val == 1):
-            print(f"Employee{emp} is present")
-        else:
-            print(f"Employee{emp} is Not present")
+    """
+    rand_val = random.randint(0,1)
+    if(rand_val == 1):
+        print("Employee is present")
+    else:
+        print("Employee is Not present")
+
+def cal_wage(hr_wage,total__hr):
+    """
+        Description: 
+            Function to calculate wage per day
+        parameters:
+            hr_wage: per hour wage
+            total_hr:total number of hours
+        Returns:
+            returns total amount of wage per day
+    """
+    wage_per_day = total__hr*hr_wage
+    return wage_per_day
 
 def main():
     display()
-    num_emp = int(input("Enter the total number of employees :"))
-    check_attendence(num_emp)
+    check_attendence()
+    day_wage = cal_wage(20,8)
+    print(f"The total wage per day is :{day_wage}")
 
 if __name__ == "__main__":
     main()
