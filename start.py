@@ -43,6 +43,15 @@ def cal_wage(hr_wage,total__hr):
     return wage_per_day
 
 def parttime_wage(parttime_hr,hr_wage):
+    """
+        Description: 
+            Function to calculate part time employee wage 
+        parameters:
+            hr_wage: per hour wage
+            parttime_hr:total number of hours
+        Returns:
+            returns total amount of wage based on hours
+    """
     return parttime_hr*hr_wage
 
 def main():
