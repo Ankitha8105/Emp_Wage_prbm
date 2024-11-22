@@ -43,6 +43,15 @@ def cal_wage(hr_wage,total__hr):
     return wage_per_day
 
 def parttime_wage(parttime_hr,hr_wage):
+    """
+        Description: 
+            Function to calculate part time employee wage 
+        parameters:
+            hr_wage: per hour wage
+            parttime_hr:total number of hours
+        Returns:
+            returns total amount of part time employee wage
+    """
     return parttime_hr*hr_wage
 
 def cal_wage_per_month(num_months,wage_per_hr):
@@ -57,6 +66,26 @@ def cal_wage_per_month(num_months,wage_per_hr):
     """
     return num_months*20*wage_per_hr
 
+def calculate_wages(hourly_wage, num_days, working_hr):
+    """
+    Description: 
+        Function to calculate total wage for a month until a condition of total working hours
+        or days is reached.
+    Parameters:
+        hourly_wage: wage per hour
+        num_days: number of days worked
+        working_hr: hours worked per day
+    Returns:
+        total wage for the month
+    """
+    total_wage = 0 
+    
+    while(num_days <= 20 and working_hr <= 100):  
+        total_wage += hourly_wage * working_hr  
+        num_days += 1  
+        working_hr += 8  
+    
+    return total_wage
 def main():
     display()
     check_attendence()
@@ -64,6 +93,7 @@ def main():
     print(f"The total wage per day is :{day_wage}")
     print(f"The part time employee wage is :{parttime_wage(8,22)}")
     print(f"The total amount of wage per months is :{cal_wage_per_month(2,20)}")
+    print(f"The total wage is :{calculate_wages(20,1,8)}")
 
 if __name__ == "__main__":
     main()
