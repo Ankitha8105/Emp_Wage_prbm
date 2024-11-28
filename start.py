@@ -1,9 +1,18 @@
+'''
+    @Author:Ankitha
+    @Date: 22-11-2024
+    @Last Modified by: Ankitha
+    @Last Modified time: 22-11-2024
+    @Title : Employee wage computation
+
+'''
 import random
 
 class Employee:
     def __init__(self, hr_wage, total_hr_per_day=None, total_num_days_per_month=None, num_hrs=None):
         """
-        Initializes an Employee object with hourly wage and either daily/hourly data
+        Description:
+            Initializes an Employee object with hourly wage and either daily/hourly data
         """
         self.hr_wage = hr_wage
         self.total_hr_per_day = total_hr_per_day
@@ -13,14 +22,22 @@ class Employee:
     @staticmethod
     def display():
         """
-        Function to display the welcome message.
+        Description:
+            Function to display the welcome message.
+    
+        Returns:
+            welcome message on display
         """
         print("Welcome to Employee Wage Computation Program !!!")
 
     @staticmethod
     def check_attendance():
         """
-        Function to check if employee is present or not.
+        Description:
+            Function to check if employee is present or not.
+    
+        Returns:
+            Employee is present or not
         """
         rand_val = random.randint(0, 1)
         if rand_val == 1:
@@ -31,7 +48,8 @@ class Employee:
     @staticmethod
     def cal_wage(hr_wage, total_hr):
         """
-        Function to calculate wage per day.
+        Description:
+            Function to calculate wage per day.
         Parameters:
             hr_wage: per hour wage
             total_hr: total hours worked in a day
@@ -43,7 +61,8 @@ class Employee:
     @staticmethod
     def parttime_wage(parttime_hr, hr_wage):
         """
-        Function to calculate part-time employee wage.
+        Description:
+            Function to calculate part-time employee wage.
         Parameters:
             parttime_hr: total hours worked part-time
             hr_wage: hourly wage
@@ -55,7 +74,8 @@ class Employee:
     @staticmethod
     def cal_wage_per_month(num_months, wage_per_hr):
         """
-        Function to calculate total wage per month.
+        Description:
+            Function to calculate total wage per month.
         Parameters:
             wage_per_hr: wage per hour
             num_months: number of months
@@ -67,7 +87,8 @@ class Employee:
     @staticmethod
     def calculate_wages(hourly_wage, num_days, working_hr):
         """
-        Function to calculate total wage for the month based on working hours and days.
+        Description:
+            Function to calculate total wage for the month based on working hours and days.
         Parameters:
             hourly_wage: wage per hour
             num_days: number of days worked
@@ -83,16 +104,11 @@ class Employee:
         
         return total_wage
     
-    def cal_emp_wage(self):
-        """
-        Function to calculate employee wage based on hours worked.
-        """
-        return self.hr_wage * self.num_hrs
-    
     @classmethod
     def cal_empwage(cls,hr_wage,num_hrs):
         """
-        Function to calculate wage per day.
+        Description:
+            Function to calculate wage per day.
         Parameters:
             hr_wage: per hour wage
             total_hr: total hours worked in a day
@@ -120,10 +136,6 @@ print(f"The total wage is: {Employee.calculate_wages(20, 1, 8)}")
 
 
 Employee_obj = Employee(20, num_hrs=8)
-
-
-emp_wage = Employee_obj.cal_emp_wage()
-print(f"The employee wage is: {emp_wage}")
 
 wage = Employee.cal_empwage(20,8)
 print(f"Claculating employee wage using classmethod : {wage}")
